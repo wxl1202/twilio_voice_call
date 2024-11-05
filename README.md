@@ -91,3 +91,6 @@ Message:
 "tts": "網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理"
 }
 ```
+
+## 參考文件
+[On-Call voice API 簡報](https://docs.google.com/presentation/d/1zSnaBdJF1zqLWHDSM8kR7ZfaaCp7j5-rfLDCoruGUvs/edit#slide=id.p)
