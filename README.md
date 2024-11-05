@@ -93,3 +93,5 @@ Message:
 
 ## 參考文件
 [On-Call voice API 簡報](https://docs.google.com/presentation/d/1zSnaBdJF1zqLWHDSM8kR7ZfaaCp7j5-rfLDCoruGUvs/edit#slide=id.p)
+
+[Twilio - Get call status events during a call](https://www.twilio.com/docs/voice/make-calls#get-call-status-events-during-a-call)
