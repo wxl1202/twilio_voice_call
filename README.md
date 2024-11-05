@@ -21,6 +21,7 @@ curl -X POST https://voice-call-1014802662897.asia-east1.run.app/v1/gf/call \
 }'
 
 # dev: 撥打多號碼
+#   使用逗號分隔，需使用國際電話格式，eg. +8869xxxxxxxx
 curl -X POST https://voice-call-1014802662897.asia-east1.run.app/v1/gf/call \
 -H "Authorization: Bearer SzbRYzYTVvUbapq6" \
 -H "Content-Type: application/json" \
@@ -57,16 +58,16 @@ TWILIO_ACCOUNT_SID=aaa
 # twilio token
 TWILIO_AUTH_TOKEN=bbb
 
-# status callback domain (不需要 https://)
+# status callback domain，即部署時產生的 Cloud Run Domain (不需要 https://)
 DOMAIN=aa.bb.cc
 
-# 使用外撥的電話號碼
+# 使用外撥的電話號碼：月租號碼
 PHONE_NUMBER='+17433308044'
 
 # Audit 使用的 webhook 將撥打資訊送到窗裡
 GOOGLE_CHAT_ROOM='https://chat.googleapis.com/v1/spaces/AAAAORiB-f4/messages?....'
 
-# cloud run 設定 listen port 5000
+# cloud run 設定 listen port 5000，對應 Dockerfile 設定。
 
 # prod domain
 https://voice-call-842544503241.asia-east1.run.app
@@ -80,7 +81,7 @@ URL: https://voice-call-842544503241.asia-east1.run.app/v1/gf/call
 
 HTTP Method: POST
 
-Authorization Header - Credentials: 加入 TOKEN
+Authorization Header - Credentials: 加入 TOKEN （目前為 hard code 在程式中） 
 
 Message:
 ```bash
