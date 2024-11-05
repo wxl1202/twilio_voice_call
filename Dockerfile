@@ -6,7 +6,7 @@ ENV TWILIO_AUTH_TOKEN=bbb
 ENV DOMAIN=aa.bb.cc
 ENV PHONE_NUMBER='+17433308044'
 ENV TZ=Asia/Taipei
-ENV GOOGLE_CHAT_ROOM='https://chat.googleapis.com/v1/spaces/AAAAORiB-f4/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=znt0IanI-jpY9I0ox5f3bWs9jAF1XdcgVaiLQ81LEQA'
+ENV GOOGLE_CHAT_ROOM=''
 
 # 關閉 buffered 避免 log 輸出緩衝
 # https://stackoverflow.com/questions/60828641/simplest-way-to-perform-logging-from-google-cloud-run
