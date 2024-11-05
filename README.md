@@ -66,7 +66,7 @@ DOMAIN=aa.bb.cc
 PHONE_NUMBER='+17433308044'
 
 # Audit 使用的 webhook 將撥打資訊送到窗裡
-GOOGLE_CHAT_ROOM='https://chat.googleapis.com/v1/spaces/AAAAORiB-f4/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=znt0IanI-jpY9I0ox5f3bWs9jAF1XdcgVaiLQ81LEQA'
+GOOGLE_CHAT_ROOM='https://chat.googleapis.com/v1/spaces/AAAAORiB-f4/messages?....'
 
 # cloud run 設定 listen port 5000
 
