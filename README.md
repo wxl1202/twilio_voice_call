@@ -47,11 +47,9 @@ gcloud builds submit --project gcp-poc-384805 --tag asia.gcr.io/gcp-poc-384805/v
 
 # Prod
 gcloud builds submit --project pchomeec-devops --tag asia.gcr.io/pchomeec-devops/voice_call:rc0.1 .
-
-
 ```
 
-## Cloud Run 設定環境變數
+## 手動部署並設定 Cloud Run 環境變數
 ```bash
 # twilio account SID
 TWILIO_ACCOUNT_SID=aaa
