@@ -72,12 +72,27 @@ def make_cal_gf():
 
     # 取得 JSON 資料
     data = request.get_json()
+    print(json.dumps(data, indent=4))       # 留下 json data 後續除錯使用
+    
     inner_message = json.loads(data.get('message', '{}'))
     phone_numbers = inner_message.get('phone')  # 取得逗號分隔的電話號碼
     message_content = inner_message.get('tts')
     
     if not phone_numbers or not message_content:
         return jsonify({'error': 'Missing phone or message content'}), 400
+    
+    # 檢查欄位是否此通知是 DatasourceError 或 DatasourceNoData 就不撥出 voice call
+    found = any(alert['labels']['alertname'] in ["DatasourceError", "DatasourceNoData"] for alert in data['alerts'])
+    
+    if found:
+        return jsonify({'message': 'Found DatasourceError or DatasourceNoData'}), 200
+    
+    # 檢查是否為 resolve 就不撥出 voice call
+    resolved_found = any(alert['status'] == "resolved" for alert in data['alerts'])
+    
+    if resolved_found:
+        return jsonify({'message': 'Found resolved'}), 200
+    
     
     # 將逗號分隔的號碼轉為清單
     phone_list = [phone.strip() for phone in phone_numbers.split(',')]
