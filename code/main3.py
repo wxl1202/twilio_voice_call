@@ -85,12 +85,14 @@ def make_cal_gf():
     found = any(alert['labels']['alertname'] in ["DatasourceError", "DatasourceNoData"] for alert in data['alerts'])
     
     if found:
+        print("Found DatasourceError or DatasourceNoData, bypass call out.")
         return jsonify({'message': 'Found DatasourceError or DatasourceNoData'}), 200
     
     # 檢查是否為 resolve 就不撥出 voice call
     resolved_found = any(alert['status'] == "resolved" for alert in data['alerts'])
     
     if resolved_found:
+        print("Found resolved, bypass call out.")
         return jsonify({'message': 'Found resolved'}), 200
     
     

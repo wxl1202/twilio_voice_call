@@ -38,6 +38,156 @@ curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
   "message": "{ \"phone\": \"+886917780800\", \"tts\": \"網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理\" }",
   "aaa": ""
 }'
+
+# prod - 測試 DatasourceError
+curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
+-H "Authorization: Bearer SzbRYzYTVvUbapq6" \
+-H "Content-Type: application/json" \
+-d '{
+  "receiver": "\\[Google Chat\\] P0 - emergency",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "AAA 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "aaa-log",
+        "rulename": "aaa 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "DatasourceError",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "bbb-log",
+        "rulename": "bbb 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    }
+  ],
+  "message": "{ \"phone\": \"+886917780800\", \"tts\": \"網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理\" }",
+  "aaa": ""
+}'
+
+
+# prod - 測試 DatasourceNoData
+curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
+-H "Authorization: Bearer SzbRYzYTVvUbapq6" \
+-H "Content-Type: application/json" \
+-d '{
+  "receiver": "\\[Google Chat\\] P0 - emergency",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "AAA 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "aaa-log",
+        "rulename": "aaa 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "DatasourceNoData",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "bbb-log",
+        "rulename": "bbb 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    }
+  ],
+  "message": "{ \"phone\": \"+886917780800\", \"tts\": \"網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理\" }",
+  "aaa": ""
+}'
+
+# prod - 測試 Grafana 格式
+curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
+-H "Authorization: Bearer SzbRYzYTVvUbapq6" \
+-H "Content-Type: application/json" \
+-d '{
+  "receiver": "\\[Google Chat\\] P0 - emergency",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "AAA 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "aaa-log",
+        "rulename": "aaa 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "BBB 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "bbb-log",
+        "rulename": "bbb 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    }
+  ],
+  "message": "{ \"phone\": \"+886917780800\", \"tts\": \"網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理\" }",
+  "aaa": ""
+}'
+
+
+# prod - 測試 resolved 
+curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
+-H "Authorization: Bearer SzbRYzYTVvUbapq6" \
+-H "Content-Type: application/json" \
+-d '{
+  "receiver": "\\[Google Chat\\] P0 - emergency",
+  "status": "resolved",
+  "alerts": [
+    {
+      "status": "resolved",
+      "labels": {
+        "alertname": "AAA 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "aaa-log",
+        "rulename": "aaa 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "BBB 測試",
+        "datasource_uid": "9wHKZOY7z",
+        "grafana_folder": "PChome 24h",
+        "notification-group": "pchome24h-services",
+        "ref_id": "bbb-log",
+        "rulename": "bbb 連線異常 (payflow)",
+        "severity": "emergency"
+      }
+    }
+  ],
+  "message": "{ \"phone\": \"+886917780800\", \"tts\": \"網家工程值班自動語音，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理，P0 警告觸發，請立即上線處理\" }",
+  "aaa": ""
+}'
 ```
 
 
@@ -47,7 +197,7 @@ curl -X POST https://voice-call-842544503241.asia-east1.run.app/v1/gf/call \
 gcloud builds submit --project gcp-poc-384805 --tag asia.gcr.io/gcp-poc-384805/voice_call:rc0.1 .
 
 # Prod
-gcloud builds submit --project pchomeec-devops --tag asia.gcr.io/pchomeec-devops/voice_call:rc0.1 .
+gcloud builds submit --project pchomeec-devops --tag asia.gcr.io/pchomeec-devops/voice_call:rc0.2 .
 ```
 
 ## 手動部署並設定 Cloud Run 環境變數
